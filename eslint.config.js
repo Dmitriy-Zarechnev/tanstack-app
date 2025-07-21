@@ -5,8 +5,10 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import prettier from 'eslint-plugin-prettier'
+import pluginQuery from '@tanstack/eslint-plugin-query'
 
 export default [
+  ...pluginQuery.configs['flat/recommended'],
   {
     ignores: ['dist', 'node_modules', '**/*.d.ts', '**/*.config.js'], // Игнорируемые файлы и папки
   },
