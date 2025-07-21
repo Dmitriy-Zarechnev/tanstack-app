@@ -1,7 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
+import stylelint from 'vite-plugin-stylelint'
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    stylelint({
+      fix: true,
+      include: ['**/*.{css,scss}'],
+      exclude: ['node_modules', 'dist'],
+    }),
+  ],
 })
