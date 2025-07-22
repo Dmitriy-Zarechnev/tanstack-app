@@ -1,18 +1,34 @@
-import { useEffect } from 'react'
+import { useQuery } from '@tanstack/react-query'
 import { client } from '@/shared/api/client'
 
 function App() {
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await client.GET('/playlists')
+  const query = useQuery({
+    // Ключ помогает идентифицировать запрос и не дублировать запросы во всём приложении
+    queryKey: ['playlists'],
 
-      return response.data
-    }
+    // Отключение нового запроса при устарении данных
+    staleTime: Infinity,
 
-    fetchData().then((data) => console.log(data))
-  }, [])
+    // Минимальное время, когда данные будут зачищены при неиспользовании
+    gcTime: 10 * 1000,
 
-  return <h1>Hello</h1>
+    // Если данные устарели, не делать новый запрос при монтировании
+    refetchOnMount: false,
+
+    // Если данные устарели, не делать новый запрос при возвращении на вкладку
+    refetchOnWindowFocus: false,
+
+    // Запрос за playlists
+    queryFn: () => client.GET('/playlists'),
+  })
+
+  return (
+    <ul>
+      {query.data?.data?.data.map((el) => {
+        return <li key={el.id}>{el.attributes.title}</li>
+      })}
+    </ul>
+  )
 }
 
 export default App
