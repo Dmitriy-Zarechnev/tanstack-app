@@ -1,15 +1,12 @@
 import { useEffect } from 'react'
+import { client } from '@/shared/api/client'
 
 function App() {
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://musicfun.it-incubator.app/api/1.0/playlists', {
-        headers: {
-          'api-key': '',
-        },
-      })
+      const response = await client.GET('/playlists')
 
-      return response.json()
+      return response.data
     }
 
     fetchData().then((data) => console.log(data))
