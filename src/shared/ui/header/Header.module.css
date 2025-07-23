@@ -1,0 +1,23 @@
+.header {
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navLinks {
+    display: flex;
+    gap: 1rem;
+}
+
+.accountBar {
+    display: flex;
+    align-items: center;
+}
