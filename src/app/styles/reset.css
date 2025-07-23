@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 360px;
+        border: 0;
+}
+
+input,
+button,
+select,
+textarea,
+optgroup,
+option {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    background-color: unset;
+    border: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: black !important;
+}
+
+img {
+    vertical-align: top;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+*::selection {
+    color: white;
+    background-color: black;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track:horizontal {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb:horizontal {
+    background-color: black;
+    border: 3px solid black;
+    border-radius: 5px;
+
+    &:hover {
+        cursor: grab;
+        background-color: yellow;
+        border: 3px solid yellow;
+    }
+}
